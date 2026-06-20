@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="父亲节快乐 - 鄢博宇 致老爸">
+<title>父亲节快乐 · 致老爸</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a2744;--navy-light:#2a3f66;
+  --gold:#c8a45c;--gold-light:#e8d5a8;
+  --cream:#f5efe8;--warm:#fdf8f0;
+  --text:#2c2c2c;--text-light:#6b6b6b;
+  --shadow:0 8px 32px rgba(26,39,68,0.12);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  background:var(--warm);color:var(--text);
+  overflow-x:hidden;line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,var(--navy)0%,#0f1a2e 40%,var(--navy-light)100%);
+  overflow:hidden;padding:2rem 1.5rem;text-align:center;
+}
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-bg span{
+  position:absolute;width:6px;height:6px;
+  background:rgba(200,164,92,0.15);border-radius:50%;
+  animation:floatUp linear infinite;
+}
+.hero-bg span:nth-child(1){left:5%;bottom:-10px;animation-duration:12s;animation-delay:0s;width:4px;height:4px}
+.hero-bg span:nth-child(2){left:15%;bottom:-10px;animation-duration:15s;animation-delay:1s;width:8px;height:8px}
+.hero-bg span:nth-child(3){left:25%;bottom:-10px;animation-duration:10s;animation-delay:2s;width:5px;height:5px}
+.hero-bg span:nth-child(4){left:40%;bottom:-10px;animation-duration:14s;animation-delay:0.5s;width:7px;height:7px}
+.hero-bg span:nth-child(5){left:55%;bottom:-10px;animation-duration:11s;animation-delay:3s;width:3px;height:3px}
+.hero-bg span:nth-child(6){left:68%;bottom:-10px;animation-duration:16s;animation-delay:1.5s;width:6px;height:6px}
+.hero-bg span:nth-child(7){left:80%;bottom:-10px;animation-duration:13s;animation-delay:2.5s;width:5px;height:5px}
+.hero-bg span:nth-child(8){left:92%;bottom:-10px;animation-duration:18s;animation-delay:4s;width:9px;height:9px;background:rgba(200,164,92,0.08)}
+@keyframes floatUp{
+  0%{transform:translateY(0)scale(0);opacity:0}
+  10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100vh)scale(1);opacity:0}
+}
+.glow-ring{
+  position:absolute;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,92,0.08)0%,transparent 70%);
+  animation:pulseGlow 4s ease-in-out infinite;pointer-events:none;
+}
+@keyframes pulseGlow{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.2);opacity:1}}
+.scales-container{
+  position:relative;margin-bottom:1.5rem;
+  display:flex;align-items:center;justify-content:center;
+  animation:scaleAppear 1.5s ease-out forwards;
+}
+@keyframes scaleAppear{0%{opacity:0;transform:scale(0.5)translateY(40px)}100%{opacity:1;transform:scale(1)translateY(0)}}
+.scales-svg{width:120px;height:auto;display:block;margin:0 auto}
+.scales-svg .beam{animation:beamGlow 3s ease-in-out infinite}
+@keyframes beamGlow{0%,100%{opacity:1}50%{opacity:0.7}}
+.scales-svg .left-pan{animation:panSway 4s ease-in-out infinite;transform-origin:60px 30px}
+.scales-svg .right-pan{animation:panSway 4s ease-in-out 2s infinite;transform-origin:60px 30px}
+@keyframes panSway{0%,100%{transform:rotate(0)}25%{transform:rotate(3deg)}50%{transform:rotate(0)}75%{transform:rotate(-3deg)}}
+.date-badge{
+  display:inline-block;padding:0.4rem 1.2rem;
+  border:1px solid rgba(200,164,92,0.4);border-radius:20px;
+  color:var(--gold-light);font-size:0.8rem;letter-spacing:2px;
+  margin-bottom:1.2rem;animation:fadeInDown 1s 0.3s both;
+}
+@keyframes fadeInDown{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}
+.hero h1{
+  font-size:clamp(2.8rem,8vw,4.5rem);font-weight:800;color:var(--gold);
+  letter-spacing:6px;margin-bottom:0.3rem;
+  animation:fadeInUp 1s 0.5s both;text-shadow:0 2px 20px rgba(200,164,92,0.3);
+}
+.hero .subtitle{
+  font-size:clamp(1rem,3vw,1.6rem);color:var(--gold-light);
+  opacity:0.9;margin-bottom:0.3rem;animation:fadeInUp 1s 0.7s both;letter-spacing:3px;
+}
+.hero .honor-badge{
+  display:inline-flex;flex-direction:column;align-items:center;
+  gap:0.35rem;margin-top:0.6rem;animation:fadeInUp 1s 0.9s both;
+}
+.hero .honor-badge .role-tag{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.45rem 1.4rem;background:rgba(200,164,92,0.12);
+  border:1px solid rgba(200,164,92,0.25);border-radius:30px;
+  color:var(--gold-light);font-size:0.85rem;
+  backdrop-filter:blur(4px);letter-spacing:1px;
+}
+.hero .honor-badge .firm-tag{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.35rem 1.2rem;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(200,164,92,0.15);border-radius:20px;
+  color:rgba(200,164,92,0.7);font-size:0.75rem;letter-spacing:2px;
+}
+.hero .honor-badge .sub-tag{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.35rem 1.2rem;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(200,164,92,0.1);border-radius:20px;
+  color:rgba(200,164,92,0.55);font-size:0.75rem;letter-spacing:2px;
+}
+.hero .honor-badge .role-tag svg{width:16px;height:16px;vertical-align:middle}
+.hero .honor-badge .firm-tag svg{width:14px;height:14px;vertical-align:middle}
+.hero .honor-badge .sub-tag svg{width:14px;height:14px;vertical-align:middle}
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+.hero .scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  color:rgba(200,164,92,0.5);font-size:0.75rem;letter-spacing:2px;
+  animation:fadeInUp 1s 1.2s both;
+}
+.scroll-arrow{width:24px;height:40px;border:2px solid rgba(200,164,92,0.3);border-radius:12px;position:relative}
+.scroll-arrow::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:10px;background:var(--gold);border-radius:2px;animation:scrollBounce 2s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%)translateY(0);opacity:1}50%{transform:translateX(-50%)translateY(10px);opacity:0.3}}
+/* ===== Divider ===== */
+.divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:2rem 1rem;max-width:600px;margin:0 auto}
+.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.divider-icon{color:var(--gold);font-size:1.2rem}
+/* ===== Message ===== */
+.message{max-width:700px;margin:0 auto;padding:2rem 1.5rem 3rem}
+.message-card{
+  background:#fff;border-radius:16px;padding:3rem 2rem;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:2rem;
+  opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.message-card.visible{opacity:1;transform:translateY(0)}
+.message-card::before{content:'"';position:absolute;top:-10px;left:20px;font-size:8rem;color:rgba(200,164,92,0.1);font-family:Georgia,serif;line-height:1}
+.message-card h2{color:var(--navy);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;text-align:center}
+.message-card p{color:var(--text);font-size:1.05rem;line-height:2;text-align:justify;margin-bottom:1rem;text-indent:2em}
+.message-card .signature{text-align:right;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(200,164,92,0.2)}
+.message-card .signature p{text-indent:0;text-align:right;margin-bottom:0.2rem}
+.message-card .signature .name{color:var(--navy);font-weight:700;font-size:1.2rem;letter-spacing:2px}
+.message-card .signature .date{color:var(--text-light);font-weight:400;font-size:0.85rem}
+/* ===== Honor Section ===== */
+.honor-section{max-width:700px;margin:0 auto;padding:0 1.5rem 3rem}
+.honor-card{
+  background:#fff;border-radius:16px;padding:2.5rem 2rem;
+  box-shadow:var(--shadow);border-left:4px solid var(--gold);
+  opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.honor-card.visible{opacity:1;transform:translateY(0)}
+.honor-card h3{color:var(--navy);font-size:1.2rem;font-weight:700;margin-bottom:1rem;text-align:center;letter-spacing:2px}
+.honor-card .firm-name{text-align:center;font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:1rem;letter-spacing:4px}
+.honor-card .firm-name span{color:var(--gold)}
+.honor-card .firm-desc{color:var(--text);font-size:0.95rem;line-height:2;text-align:center;max-width:500px;margin:0 auto}
+/* ===== Theme Elements ===== */
+.theme-elements{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;padding:0.5rem 1.5rem 3rem;max-width:700px;margin:0 auto}
+.theme-item{
+  display:flex;flex-direction:column;align-items:center;gap:0.6rem;
+  padding:1.2rem 1.5rem;background:#fff;border-radius:12px;
+  box-shadow:0 4px 16px rgba(26,39,68,0.06);min-width:110px;
+  opacity:0;transform:translateY(30px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.theme-item.visible{opacity:1;transform:translateY(0)}
+.theme-item:nth-child(2){transition-delay:0.15s}
+.theme-item:nth-child(3){transition-delay:0.3s}
+.theme-item:nth-child(4){transition-delay:0.45s}
+.theme-item svg{width:40px;height:40px;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.theme-item span{font-size:0.85rem;color:var(--navy);font-weight:500}
+/* ===== Quote ===== */
+.quote-section{
+  background:linear-gradient(135deg,var(--navy)0%,#0f1a2e 100%);
+  padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;
+}
+.quote-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,164,92,0.08)0%,transparent 60%)}
+.quote-content{max-width:600px;margin:0 auto;position:relative;z-index:1}
+.quote-content blockquote{font-size:clamp(1rem,3vw,1.4rem);color:var(--gold-light);line-height:2;font-style:italic;letter-spacing:1px}
+.quote-content blockquote::before{content:'「'}.quote-content blockquote::after{content:'」'}
+.quote-content .quote-author{margin-top:1rem;color:rgba(200,164,92,0.6);font-size:0.9rem;letter-spacing:2px}
+/* ===== Blessing ===== */
+.blessing{padding:4rem 1.5rem;text-align:center;background:var(--cream)}
+.blessing h2{color:var(--navy);font-size:1.6rem;margin-bottom:1rem;font-weight:700}
+.blessing p{max-width:500px;margin:0 auto;color:var(--text-light);font-size:1rem;line-height:1.8}
+.blessing .heart{display:inline-block;color:#d44;font-size:1.5rem;animation:heartBeat 1.5s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}60%{transform:scale(1)}}
+/* ===== Footer ===== */
+footer{padding:2rem 1.5rem;text-align:center;background:var(--navy);color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:1px}
+footer .footer-name{color:var(--gold);font-weight:600;letter-spacing:1px}
+/* ===== Responsive ===== */
+@media(max-width:480px){
+  .glow-ring{width:200px;height:200px}
+  .scales-svg{width:90px}
+  .hero h1{font-size:2.2rem;letter-spacing:4px}
+  .message-card{padding:2rem 1.2rem;border-radius:12px}
+  .message-card h2{font-size:1.4rem}
+  .message-card p{font-size:0.95rem}
+  .honor-card{padding:1.5rem 1.2rem}
+  .honor-card .firm-name{font-size:1.1rem}
+  .theme-item{min-width:90px;padding:1rem}
+  .theme-item svg{width:32px;height:32px}
+}
+@media(min-width:768px){
+  .message-card{padding:4rem 3rem}
+  .honor-card{padding:3rem}
+  .theme-elements{gap:2rem}
+  .theme-item{padding:1.5rem 2rem;min-width:130px}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="scales-container">
+    <div class="glow-ring"></div>
+    <svg class="scales-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="55" y="85" width="10" height="12" rx="1" fill="var(--gold)" opacity="0.8"/>
+      <rect x="58" y="28" width="4" height="57" rx="1" fill="var(--gold)" opacity="0.7"/>
+      <circle cx="60" cy="25" r="4" fill="var(--gold)" opacity="0.6"/>
+      <line class="beam" x1="15" y1="30" x2="105" y2="30" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+      <line x1="25" y1="30" x2="25" y2="42" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
+      <g class="left-pan">
+        <path d="M10,42 Q17.5,52 25,42 Q32.5,52 40,42" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="25" y1="42" x2="25" y2="60" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
+        <ellipse cx="25" cy="60" rx="14" ry="2.5" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.8"/>
+      </g>
+      <line x1="95" y1="30" x2="95" y2="42" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
+      <g class="right-pan">
+        <path d="M80,42 Q87.5,52 95,42 Q102.5,52 110,42" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="95" y1="42" x2="95" y2="60" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
+        <ellipse cx="95" cy="60" rx="14" ry="2.5" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="date-badge">2026 · 父亲节</div>
+  <h1>父亲节快乐</h1>
+  <p class="subtitle">献给最敬爱的老爸</p>
+  <div class="honor-badge">
+    <div class="role-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+        <line x1="9" y1="6" x2="15" y2="6"/>
+        <line x1="12" y1="6" x2="12" y2="18"/>
+        <line x1="9" y1="14" x2="11" y2="14"/>
+        <line x1="13" y1="14" x2="15" y2="14"/>
+        <line x1="9" y1="10" x2="11" y2="10"/>
+        <line x1="13" y1="10" x2="15" y2="10"/>
+      </svg>
+      陕西省律师协会 · 副会长
+    </div>
+    <div class="firm-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      恒典律师事务所
+    </div>
+    <div class="sub-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      安康市律师协会 · 会长
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    向下滑动
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">✦</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- Message -->
+<section class="message">
+  <div class="message-card" id="messageCard">
+    <h2>给老爸的一封信</h2>
+    <p>
+      亲爱的老爸，在这个属于您的节日里，我想对您说一声：父亲节快乐。
+    </p>
+    <p>
+      从恒典律师事务所的创立起步，到成为安康市律师协会的会长，再到陕西省律师协会的副会长——一步一个脚印，我深知您付出了多少。您手中的天平不仅衡量着案件的是非曲直，更衡量着一名法律人的良心与担当。法庭上的您沉着冷静、逻辑缜密，生活中的您却温和宽厚、如山般可靠。
+    </p>
+    <p>
+      您用专业与坚守，在秦巴山水间书写着法律人的荣光。您不仅是一位受人尊敬的法律前辈，更是我心中最伟大的父亲。您用言传身教教会我正直、诚信与坚持——这些品质比任何法条都更有力量，因为它们早已融入我的血液。
+    </p>
+    <p>
+      老爸，其实我一直很佩服您，不只是您在事业上的成就。还记得高三那年，学校明明是寄宿制，您却坚持每天接送我上下学，风雨无阻。那些在车上的短暂时光，现在回想起来，是我那段紧张岁月里最安心的片刻。而更让我感激的是，在我最迷茫低落的时候，您没有讲什么大道理，只是静静地倾听，然后轻轻告诉我——能够相遇本身就是一件很幸运的事，那些美好是真实存在过的，这就已经足够珍贵了。这句话我一直记在心里，也慢慢懂得了，我能遇到您和妈妈、遇到真心相待的朋友和老师，本身就是多么幸运的一件事。
+    </p>
+    <p>
+      老爸，我知道您每一天都保持着规律的作息，勤奋自律，即使已经做到了律所的主任、协会的会长，依然一丝不苟、兢兢业业。这份认真和努力我一直看在眼里，也一直以您为荣。但也正因为如此，我更希望您能多注意身体，别太焦虑，别给自己太大压力。您的努力所有人都看得见，您早已足够优秀，偶尔放慢脚步、好好歇一歇，也是可以的。
+    </p>
+    <p>
+      愿您在这个特别的日子里放下案卷的厚重，少一些操劳，多一些轻松与喜悦。希望您工作顺利、身体健康，希望您不要那么拼了——因为您的平安喜乐，才是我最大的心愿。
+    </p>
+    <div class="signature">
+      <p class="name">爱您的儿子 · 鄢博宇</p>
+      <p class="date">2026年6月 · 父亲节 · 敬上</p>
+    </div>
+  </div>
+</section>
+
+<!-- Law Firm Honor -->
+<section class="honor-section">
+  <div class="honor-card" id="honorCard">
+    <h3>✦ 恒典律师事务所 ✦</h3>
+    <div class="firm-name">陕西<span>恒典</span>律师事务所</div>
+    <p class="firm-desc">
+      恒典律师事务所植根安康，以"恒于法律，典于诚信"为立所之本，
+      多年来为秦巴大地的法治建设贡献着专业力量。
+      作为律所的创始合伙人，老爸您以扎实的业务功底和正直的职业品格，
+      赢得了业界与当事人一致的信赖与尊重。
+      愿您在法律的道路上继续发光发热，也愿您保重身体、劳逸结合。
+    </p>
+  </div>
+</section>
+
+<!-- Theme Elements -->
+<div class="theme-elements">
+  <div class="theme-item">
+    <svg viewBox="0 0 48 48"><path d="M24 4L28 16H42L30 24L34 36L24 28L14 36L18 24L6 16H20L24 4Z" stroke="currentColor" fill="none"/></svg>
+    <span>正义之心</span>
+  </div>
+  <div class="theme-item">
+    <svg viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="2" fill="none" stroke="currentColor"/><line x1="20" y1="16" x2="28" y2="16" stroke="currentColor"/><line x1="20" y1="22" x2="28" y2="22" stroke="currentColor"/><line x1="20" y1="28" x2="26" y2="28" stroke="currentColor"/></svg>
+    <span>法律之书</span>
+  </div>
+  <div class="theme-item">
+    <svg viewBox="0 0 48 48"><path d="M16 28V8L28 4V24L16 28Z" fill="none" stroke="currentColor" stroke-linejoin="round"/><path d="M16 28L40 20L38 14L14 22L16 28Z" fill="none" stroke="currentColor" stroke-linejoin="round"/><circle cx="16" cy="28" r="8" fill="none" stroke="currentColor"/><line x1="12" y1="32" x2="20" y2="24" stroke="currentColor" stroke-width="2"/></svg>
+    <span>天平永衡</span>
+  </div>
+  <div class="theme-item">
+    <svg viewBox="0 0 48 48"><path d="M10 44c0-8 6-14 14-14s14 6 14 14" fill="none" stroke="currentColor"/><rect x="22" y="18" width="4" height="12" rx="1" fill="none" stroke="currentColor"/><circle cx="24" cy="12" r="4" fill="none" stroke="currentColor"/><path d="M34 18l-5-3" stroke="currentColor"/><path d="M14 18l5-3" stroke="currentColor"/></svg>
+    <span>家风传承</span>
+  </div>
+</div>
+
+<!-- Quote -->
+<section class="quote-section">
+  <div class="quote-content">
+    <blockquote>
+      功成不必在我，功力必不唐捐。<br>
+      您是我心中最伟大的榜样，也是这世间最温暖的老爸。
+    </blockquote>
+    <p class="quote-author">—— 儿子 鄢博宇 敬献</p>
+  </div>
+</section>
+
+<!-- Blessing -->
+<section class="blessing">
+  <h2>愿您永远 <span class="heart">♥</span> 健康快乐</h2>
+  <p>
+    案牍劳形，莫忘停一停；<br>
+    前路且长，愿您放宽心。<br>
+    老爸，保重身体，父亲节快乐！
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  2026 · 父亲节 · <span class="footer-name">鄢博宇</span> 致老爸
+</footer>
+
+<script>
+(function(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  const card = document.getElementById('messageCard');
+  if(card) observer.observe(card);
+  const honor = document.getElementById('honorCard');
+  if(honor) observer.observe(honor);
+  document.querySelectorAll('.theme-item').forEach(el => observer.observe(el));
+  console.log('❤️ 父亲节快乐，老爸！');
+  console.log('—— 儿子 鄢博宇 敬上');
+})();
+</script>
+</body>
+</html>
