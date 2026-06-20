@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="refresh" content="2;url=父亲节快乐.html">
+<title>父亲节快乐 · 致老爸</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:linear-gradient(160deg,#1a2744 0%,#0f1a2e 40%,#2a3f66 100%);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  color:#e8d5a8;text-align:center;padding:2rem;
+}
+.icon{font-size:4rem;margin-bottom:1.5rem;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+h1{font-size:1.6rem;margin-bottom:0.5rem;letter-spacing:2px}
+p{font-size:0.95rem;color:rgba(232,213,168,0.7);margin-bottom:2rem;line-height:1.8}
+.btn{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  padding:0.8rem 2rem;background:rgba(200,164,92,0.15);
+  border:1px solid rgba(200,164,92,0.3);border-radius:30px;
+  color:#e8d5a8;text-decoration:none;font-size:1rem;
+  letter-spacing:2px;transition:all 0.3s;
+}
+.btn:hover{background:rgba(200,164,92,0.25)}
+.arrow{font-size:1.3rem;animation:arrowMove 1.5s ease-in-out infinite}
+@keyframes arrowMove{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.loading{margin-top:2rem;font-size:0.8rem;color:rgba(200,164,92,0.4);letter-spacing:1px}
+.dot{animation:dot 1.5s steps(3,infinite)}
+@keyframes dot{0%{content:''}33%{content:'.'}66%{content:'..'}100%{content:'...'}}
+</style>
+</head>
+<body>
+<div class="icon">🎁</div>
+<h1>有一份父亲节祝福等着您</h1>
+<p>来自儿子 鄢博宇 的一封信</p>
+<a class="btn" href="父亲节快乐.html">
+  点击进入 <span class="arrow">→</span>
+</a>
+<p class="loading">正在跳转<span class="dot"></span></p>
+<script>
+setTimeout(function(){
+  window.location.href = "父亲节快乐.html";
+}, 2000);
+</script>
+</body>
+</html>
